@@ -2,4 +2,5 @@
     <string name="app_name">AndroidLabs</string>
     <string name="text">Some text</string>
     <string name="hand_in">HAND IN</string>
+    <string name="seconds">Seconds_elapsed: %d</string>
 </resources>
