@@ -28,21 +28,25 @@ class ContinueWatch : AppCompatActivity() {
         outState.putInt(keyCounter, secondsElapsed)
     }
 
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        secondsElapsed = savedInstanceState.getInt(keyCounter)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        secondsElapsed = savedInstanceState?.getInt(keyCounter) ?: 0
         setContentView(R.layout.continue_watch)
         textSecondsElapsed = findViewById(R.id.textSecondsElapsed)
         backgroundThread.start()
     }
 
-    override fun onPause() {
-        super.onPause()
+    override fun onStop() {
+        super.onStop()
         access = false
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
         access = true
     }
 

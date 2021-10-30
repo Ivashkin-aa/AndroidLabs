@@ -15,8 +15,6 @@ class MainActivity : AppCompatActivity() {
         Log.i(tag, "onCreate()")
     }
 
-    fun newActivity(view: android.view.View) {}
-
     override fun onStart() {
         super.onStart()
         Log.i(tag, "onStart()")
@@ -30,6 +28,16 @@ class MainActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         Log.i(tag, "onPause()")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Log.i(tag,"onSaveInstanceState()")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.i(tag, "onRestoreInstanceState()")
     }
 
     override fun onStop() {

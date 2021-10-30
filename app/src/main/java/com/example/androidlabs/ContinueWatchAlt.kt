@@ -35,16 +35,16 @@ class ContinueWatchAlt : AppCompatActivity() {
         backgroundThread.start()
     }
 
-    override fun onPause() {
-        super.onPause()
+    override fun onStop() {
+        super.onStop()
         access = false
         val edit = sharedPreferences.edit()
         edit.putInt(keyCounter, secondsElapsed)
         edit.apply()
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
         access = true
     }
 
